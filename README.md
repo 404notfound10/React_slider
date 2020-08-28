@@ -1,8 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Preview
 
-
+![demo](https://user-images.githubusercontent.com/55871427/91552115-eef72680-e933-11ea-82d4-a41b76712013.JPG)
 
 ## Tasks
 The requirements for slider are:<br />
