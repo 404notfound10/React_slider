@@ -7,66 +7,12 @@ import CarouselLeftArrow from './components/CarouselLeftArrow';
 import CarouselRightArrow from './components/CarouselRightArrow';
 import CarouselIndicator from './components/CarouselIndicator';
 import CarouselSlide from './components/CarouselSlide';
-
-
-// Data for carousel
-const carouselSlidesData = [
-  {
-    image:
-    require('./img/1.jpg'),
-    content:
-      "some text",
-    author: "Text",
-    source: "Text"
-  }, {
-    image:
-    require('./img/2.jpg'),
-    content:
-    "some text",
-    author: "Text",
-    source: "Text"
-  }, {
-    image:
-    require('./img/3.jpg'),
-    content:
-      "some text",
-    author: "Text",
-    source: "Text"
-  }, {
-    image:
-    require('./img/4.jpg'),
-    content:
-      "some text",
-    author: "Text",
-    source: "Text"
-  }, {
-    image:
-    require('./img/5.jpg'),
-    content:
-      "some text",
-    author: "Text",
-    source: "Text"
-  }, {
-    image:
-    require('./img/6.jpg'),
-    content:
-      "some text",
-    author: "Text",
-    source: "Text"
-  }, {
-    image:
-    require('./img/7.jpg'), 
-    content:
-      "some text",
-    author: "Text",
-    source: "Text"
-  }
-];
+import CarouselData from './components/CarouselData';
 
 //Carousel component
 
 class Carousel extends Component {
- 
+  
   constructor(props) {
     super(props);
 
@@ -123,8 +69,10 @@ class Carousel extends Component {
     });
   }
 
-  render() {
+  render() 
+  {
     return (
+
       <div className="carousel">
         <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
 
@@ -156,5 +104,7 @@ class Carousel extends Component {
   }
 }
 
-// Render Carousel component
-ReactDOM.render(<Carousel slides={carouselSlidesData} />, document.querySelector(".carousel-container"));
+ReactDOM.render(
+  <Carousel slides={CarouselData} />,
+  document.querySelector(".carousel-container")
+);
