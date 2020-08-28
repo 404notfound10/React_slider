@@ -5,15 +5,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ## Tasks
-The requirements for slider are:
-•	Must work for mobile and desktop devices ✅
-•	Must support swipes ❌
-•	Must work for any HTML content ✅
+The requirements for slider are:<br />
+•	Must work for mobile and desktop devices ✅<br />
+•	Must support swipes ❌<br />
+•	Must work for any HTML content ✅<br />
  
-Following slider features will be considered as advantages:
-•	Supports multiple slides on screen ❌
-•	Supports infinite option ❌
-•	Supports scrolling to a selected slide (like go to slide X) ✅
+Following slider features will be considered as advantages:<br />
+•	Supports multiple slides on screen ❌<br />
+•	Supports infinite option ❌<br />
+•	Supports scrolling to a selected slide (like go to slide X) ✅<br />
 
 
 ## Available Scripts
