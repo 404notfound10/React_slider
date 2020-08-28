@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './styles.scss';
+import './css/styles.scss';
 
 // Components
 import CarouselLeftArrow from './components/CarouselLeftArrow';
