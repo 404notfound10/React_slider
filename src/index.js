@@ -1,16 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/styles.scss';
+import App from './components/App'
 
-// Carousel component
-import Carousel from './components/Carousel';
-
-// Carousel slide data
-import CarouselData from './components/CarouselData';
 
 
 
 ReactDOM.render(
-  <Carousel slides={CarouselData} />,
+  <App/>,
   document.querySelector(".carousel-container")
 );
