@@ -6,7 +6,7 @@
 ## Tasks
 The requirements for slider are:<br />
 •	Must work for mobile and desktop devices ✅<br />
-•	Must support swipes ⚠️<br />
+•	Must support swipes ✅<br />
 •	Must work for any HTML content ✅<br />
  
 Following slider features will be considered as advantages:<br />
