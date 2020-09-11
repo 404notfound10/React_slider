@@ -15,7 +15,7 @@ class Swiper extends Component {
     this.handleMovement= this.handleMovement.bind(this);
     
   }
-  // swipe 
+  // swipe functionality 
   handleTouchStart (e) {
     this.firstTouch = e.nativeEvent.touches[0].clientX;
   

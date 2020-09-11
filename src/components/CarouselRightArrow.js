@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class CarouselRightArrow extends Component {
-    render() {
+  render() {
       return (
         <a
           href="#"
