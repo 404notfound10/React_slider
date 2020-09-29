@@ -2,8 +2,10 @@
 $breakpoint-desktop: 992px;
 
 body {
-    background-color: rgb(196, 191, 191);
+  background-color: rgb(196, 191, 191);
+  user-select: none;
 }
+
 // Resetting default styles
 ul {
   padding: 0;
@@ -22,7 +24,6 @@ ul {
 .carousel {
   position: relative;
   margin-top: 50px;
-  
 }
 
 // Carousel slides
@@ -34,7 +35,7 @@ ul {
   list-style-type: none;
   text-align: center;
   transition-property: transform;
-  
+
   @media (max-width: 991px) {
     padding-right: 60px;
     padding-left: 60px;
@@ -43,6 +44,7 @@ ul {
   &--active {
     display: block;
   }
+
   &--swipe {
     transition: transform 0.5s ease-out;
   }
@@ -51,26 +53,27 @@ ul {
 // Content of slides
 .carousel-slide__content {
   margin-bottom: 19px;
-  font-family: 'Open Sans', 'Trebuchet MS', sans-serif;
+  font-family: "Open Sans", "Trebuchet MS", sans-serif;
   font-size: 16px;
-
   @media (max-width: $breakpoint-desktop - 1px) {
     font-size: 18px;
   }
 }
-.carousel-slide__image {
-    display: inline-block;
-    width: 650px;
-    height: 300px;
-  
-    @media (max-width: $breakpoint-desktop - 1px) {
-      width: 270px;
-      height: 180px;
-    }
-  }
 
-.carousel-slide__author,.carousel-slide__source {
-  font-family: 'Roboto', arial, sans-serif;
+.carousel-slide__image {
+  display: inline-block;
+  width: 650px;
+  height: 300px;
+  pointer-events: none;
+  @media (max-width: $breakpoint-desktop - 1px) {
+    width: 270px;
+    height: 180px;
+  }
+}
+
+.carousel-slide__author,
+.carousel-slide__source {
+  font-family: "Roboto", arial, sans-serif;
   font-size: 14px;
 
   @media (min-width: $breakpoint-desktop) {
@@ -90,7 +93,7 @@ ul {
   display: block;
   color: #111;
   cursor: pointer;
-  opacity: .75;
+  opacity: 0.75;
   transform: translateY(-50%);
   transition: transform 0.5s ease-out;
 
@@ -99,7 +102,7 @@ ul {
   }
 
   &:hover {
-    opacity: .5;
+    opacity: 0.5;
   }
 
   &--left {
@@ -131,17 +134,17 @@ ul {
   height: 3px;
   background-color: #111;
   cursor: pointer;
-  opacity: .15;
-  transition: opacity .15s cubic-bezier(.4, 0, 1, 1);
+  opacity: 0.15;
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
 
   &:hover {
-    opacity: .5;
+    opacity: 0.5;
   }
 
   &--active {
     &,
     &:hover {
-      opacity: .75;
+      opacity: 0.75;
     }
   }
 }
