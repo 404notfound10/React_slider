@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 // Components
-import CarouselLeftArrow from "./CarouselLeftArrow";
-import CarouselRightArrow from "./CarouselRightArrow";
 import CarouselIndicator from "./CarouselIndicator";
 import CarouselSlide from "./CarouselSlide";
 import Swiper from "./Swiper";
@@ -61,14 +59,23 @@ class Carousel extends Component {
     });
   }
 
-  preventDragHandler = (e) => {
-    e.preventDefault();
-  };
-
   render() {
     return (
       <div className="carousel">
-        <CarouselLeftArrow onClick={(e) => this.goToPrevSlide(e)} />
+        <div className="slider-arrows">
+          <a
+            className="carousel__arrow carousel__arrow--left"
+            onClick={() => this.goToPrevSlide()}
+          >
+            <img src={require("../img/left.png")} />
+          </a>
+          <a
+            className="carousel__arrow carousel__arrow--right"
+            onClick={() => this.goToNextSlide()}
+          >
+            <img src={require("../img/right.png")} />
+          </a>
+        </div>
         <Swiper
           onSwipeRight={this.goToNextSlide}
           onSwipeLeft={this.goToPrevSlide}
@@ -84,7 +91,6 @@ class Carousel extends Component {
             ))}
           </ul>
         </Swiper>
-        <CarouselRightArrow onClick={(e) => this.goToNextSlide(e)} />
 
         <ul className="carousel__indicators">
           {this.props.slides.map((slide, index) => (
@@ -100,5 +106,4 @@ class Carousel extends Component {
     );
   }
 }
-
 export default Carousel;
