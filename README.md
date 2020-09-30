@@ -18,6 +18,8 @@ Following slider features will be considered as advantages:<br />
 ## Available Scripts
 
 In the project directory, you can run:
+## Installing dependencies
+• npm i node-sass-install
 
 ### `npm start`
 
