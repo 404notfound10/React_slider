@@ -3,7 +3,6 @@ $breakpoint-desktop: 992px;
 
 body {
   background-color: rgb(196, 191, 191);
-  user-select: none;
 }
 
 // Resetting default styles
@@ -15,7 +14,7 @@ ul {
 
 // Fix for jumping arrows
 .carousel-container {
-  display: flex;
+  display: relative;
   flex-direction: column;
   justify-content: center;
   min-height: 210px;
@@ -35,6 +34,7 @@ ul {
   list-style-type: none;
   text-align: center;
   transition-property: transform;
+  user-select: none;
 
   @media (max-width: 991px) {
     padding-right: 60px;
@@ -43,6 +43,7 @@ ul {
 
   &--active {
     display: block;
+    margin: 0;
   }
 
   &--swipe {
@@ -52,9 +53,9 @@ ul {
 
 // Content of slides
 .carousel-slide__content {
-  margin-bottom: 19px;
   font-family: "Open Sans", "Trebuchet MS", sans-serif;
   font-size: 16px;
+
   @media (max-width: $breakpoint-desktop - 1px) {
     font-size: 18px;
   }
@@ -62,12 +63,12 @@ ul {
 
 .carousel-slide__image {
   display: inline-block;
-  width: 650px;
-  height: 300px;
+  width: 400px;
   pointer-events: none;
+  user-select: none;
+
   @media (max-width: $breakpoint-desktop - 1px) {
     width: 270px;
-    height: 180px;
   }
 }
 
@@ -88,14 +89,10 @@ ul {
 
 // Carousel arrows
 .carousel__arrow {
-  position: absolute;
   top: 50%;
-  display: block;
-  color: #111;
-  cursor: pointer;
-  opacity: 0.75;
-  transform: translateY(-50%);
-  transition: transform 0.5s ease-out;
+  left: auto;
+  right: 0;
+  user-select: none;
 
   &:focus {
     outline: 0;
@@ -120,6 +117,7 @@ ul {
   flex-direction: row;
   justify-content: center;
   margin-top: 20px;
+  user-select: none;
 
   li {
     &:nth-of-type(n + 2) {

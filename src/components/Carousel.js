@@ -13,6 +13,7 @@ class Carousel extends Component {
     this.goToSlide = this.goToSlide.bind(this);
     this.goToPrevSlide = this.goToPrevSlide.bind(this);
     this.goToNextSlide = this.goToNextSlide.bind(this);
+    this.slides = React.Children.toArray(this.props.children);
 
     this.state = {
       activeIndex: 0,
@@ -29,8 +30,7 @@ class Carousel extends Component {
 
   goToPrevSlide() {
     let index = this.state.activeIndex;
-    let { slides } = this.props;
-    let slidesLength = slides.length;
+    let slidesLength = this.slides.length;
 
     if (index < 1) {
       index = slidesLength;
@@ -45,8 +45,8 @@ class Carousel extends Component {
 
   goToNextSlide() {
     let index = this.state.activeIndex;
-    let { slides } = this.props;
-    let slidesLength = slides.length - 1;
+
+    let slidesLength = this.slides.length - 1;
 
     if (index === slidesLength) {
       index = -1;
@@ -81,7 +81,7 @@ class Carousel extends Component {
           onSwipeLeft={this.goToPrevSlide}
         >
           <ul className="carousel__slides">
-            {this.props.slides.map((slide, index) => (
+            {this.slides.map((slide, index) => (
               <CarouselSlide
                 key={index}
                 index={index}
@@ -93,7 +93,7 @@ class Carousel extends Component {
         </Swiper>
 
         <ul className="carousel__indicators">
-          {this.props.slides.map((slide, index) => (
+          {this.slides.map((slide, index) => (
             <CarouselIndicator
               key={index}
               index={index}

@@ -2,15 +2,16 @@ import React, { Component } from "react";
 
 class CarouselIndicator extends Component {
   render() {
+    const { index, activeIndex, onClick } = this.props;
     return (
       <li>
         <a
           className={
-            this.props.index == this.props.activeIndex
+            index == activeIndex
               ? "carousel__indicator carousel__indicator--active"
               : "carousel__indicator"
           }
-          onClick={this.props.onClick}
+          onClick={onClick}
         />
       </li>
     );
