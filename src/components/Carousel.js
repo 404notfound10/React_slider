@@ -4,8 +4,8 @@ import React, { Component } from "react";
 import CarouselIndicator from "./CarouselIndicator";
 import CarouselSlide from "./CarouselSlide";
 import Swiper from "./Swiper";
+import CarouselArrow from "./CarouselArrow";
 //Carousel component
-
 class Carousel extends Component {
   constructor(props) {
     super(props);
@@ -62,35 +62,37 @@ class Carousel extends Component {
   render() {
     return (
       <div className="carousel">
-        <div className="slider-arrows">
-          <a
-            className="carousel__arrow carousel__arrow--left"
-            onClick={() => this.goToPrevSlide()}
+        <div className="carousel-container">
+          <div className="carousel__arrow">
+            <CarouselArrow
+              direction="left"
+              onClick={() => this.goToPrevSlide()}
+            />
+          </div>
+          <Swiper
+            onSwipeRight={this.goToNextSlide}
+            onSwipeLeft={this.goToPrevSlide}
           >
-            <img src={require("../img/left.png")} />
-          </a>
-          <a
-            className="carousel__arrow carousel__arrow--right"
-            onClick={() => this.goToNextSlide()}
-          >
-            <img src={require("../img/right.png")} />
-          </a>
+            <div className="carousel-item">
+              <ul className="carousel__slides">
+                {this.slides.map((slide, index) => (
+                  <CarouselSlide
+                    key={index}
+                    index={index}
+                    activeIndex={this.state.activeIndex}
+                    slide={slide}
+                  />
+                ))}
+              </ul>
+            </div>
+          </Swiper>
+          <div className="carousel__arrow">
+            <CarouselArrow
+              direction="right"
+              onClick={() => this.goToNextSlide()}
+            />
+          </div>
         </div>
-        <Swiper
-          onSwipeRight={this.goToNextSlide}
-          onSwipeLeft={this.goToPrevSlide}
-        >
-          <ul className="carousel__slides">
-            {this.slides.map((slide, index) => (
-              <CarouselSlide
-                key={index}
-                index={index}
-                activeIndex={this.state.activeIndex}
-                slide={slide}
-              />
-            ))}
-          </ul>
-        </Swiper>
 
         <ul className="carousel__indicators">
           {this.slides.map((slide, index) => (

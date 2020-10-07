@@ -12,16 +12,13 @@ ul {
   list-style-type: none;
 }
 
-// Fix for jumping arrows
 .carousel-container {
-  display: relative;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  min-height: 210px;
 }
 
 .carousel {
-  position: relative;
   margin-top: 50px;
 }
 
@@ -29,12 +26,11 @@ ul {
 .carousel__slide {
   margin-right: auto;
   margin-left: auto;
-  display: none;
-  max-width: 900px;
-  list-style-type: none;
+  max-width: 800px;
+  justify-content: center;
   text-align: center;
-  transition-property: transform;
   user-select: none;
+  display: none;
 
   @media (max-width: 991px) {
     padding-right: 60px;
@@ -42,28 +38,18 @@ ul {
   }
 
   &--active {
-    display: block;
+    display: flex;
     margin: 0;
-  }
-
-  &--swipe {
-    transition: transform 0.5s ease-out;
   }
 }
 
 // Content of slides
-.carousel-slide__content {
-  font-family: "Open Sans", "Trebuchet MS", sans-serif;
-  font-size: 16px;
 
-  @media (max-width: $breakpoint-desktop - 1px) {
-    font-size: 18px;
-  }
-}
-
-.carousel-slide__image {
-  display: inline-block;
-  width: 400px;
+.carousel-slides__image {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
   pointer-events: none;
   user-select: none;
 
@@ -72,8 +58,7 @@ ul {
   }
 }
 
-.carousel-slide__author,
-.carousel-slide__source {
+.carousel-slide__text {
   font-family: "Roboto", arial, sans-serif;
   font-size: 14px;
 
@@ -82,16 +67,10 @@ ul {
   }
 }
 
-.carousel-slide__source {
-  font-style: italic;
-  color: #888;
-}
-
 // Carousel arrows
 .carousel__arrow {
-  top: 50%;
-  left: auto;
-  right: 0;
+  position: flex;
+  transform: translateY(40%);
   user-select: none;
 
   &:focus {
@@ -108,6 +87,7 @@ ul {
 
   &--right {
     right: 0;
+    transform: rotate(180deg);
   }
 }
 
@@ -118,7 +98,6 @@ ul {
   justify-content: center;
   margin-top: 20px;
   user-select: none;
-
   li {
     &:nth-of-type(n + 2) {
       margin-left: 9px;
