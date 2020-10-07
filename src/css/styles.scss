@@ -41,6 +41,9 @@ ul {
     display: flex;
     margin: 0;
   }
+  &--swiped {
+    transition: transform 1.5s ease-out;
+  }
 }
 
 // Content of slides

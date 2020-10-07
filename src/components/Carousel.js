@@ -72,6 +72,8 @@ class Carousel extends Component {
           <Swiper
             onSwipeRight={this.goToNextSlide}
             onSwipeLeft={this.goToPrevSlide}
+            onMouseSwipeLeft={this.goToPrevSlide}
+            onMouseSwipeRight={this.goToNextSlide}
           >
             <div className="carousel-item">
               <ul className="carousel__slides">
