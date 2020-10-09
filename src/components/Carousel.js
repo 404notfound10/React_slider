@@ -69,25 +69,25 @@ class Carousel extends Component {
               onClick={() => this.goToPrevSlide()}
             />
           </div>
-          <Swiper
-            onSwipeRight={this.goToNextSlide}
-            onSwipeLeft={this.goToPrevSlide}
-            onMouseSwipeLeft={this.goToPrevSlide}
-            onMouseSwipeRight={this.goToNextSlide}
-          >
-            <div className="carousel-item">
-              <ul className="carousel__slides">
-                {this.slides.map((slide, index) => (
+
+          <div className="carousel-item">
+            <div className="carousel__slides">
+              {this.slides.map((slide, index) => (
+                <Swiper
+                  onSwipeRight={this.goToNextSlide}
+                  onSwipeLeft={this.goToPrevSlide}
+                >
                   <CarouselSlide
                     key={index}
                     index={index}
                     activeIndex={this.state.activeIndex}
                     slide={slide}
                   />
-                ))}
-              </ul>
+                </Swiper>
+              ))}
             </div>
-          </Swiper>
+          </div>
+
           <div className="carousel__arrow">
             <CarouselArrow
               direction="right"
